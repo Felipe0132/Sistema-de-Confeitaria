@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SIstema-Confeitaria/SIstema-Confeitaria.iml" filepath="$PROJECT_DIR$/SIstema-Confeitaria/SIstema-Confeitaria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Sistema-de-Confeitaria.iml" filepath="$PROJECT_DIR$/.idea/Sistema-de-Confeitaria.iml" />
+    </modules>
+  </component>
+</project>
