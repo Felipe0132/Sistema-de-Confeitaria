@@ -3,12 +3,12 @@ package Classes;
 public class Pedido {
 
     private Cliente cliente;
-    private Produto bolo;
+    private ProdutosAvulso bolo;
 
 
     // CONSTRUTOR
 
-    public Pedido(Cliente cliente, Produto bolo) {
+    public Pedido(Cliente cliente, ProdutosAvulso bolo) {
         this.cliente = cliente;
         this.bolo = bolo;
     }
@@ -32,11 +32,11 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public Produto getBolo() {
+    public ProdutosAvulso getBolo() {
         return bolo;
     }
 
-    public void setBolo(Produto bolo) {
+    public void setBolo(ProdutosAvulso bolo) {
         this.bolo = bolo;
     }
 }

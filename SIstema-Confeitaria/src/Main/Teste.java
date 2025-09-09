@@ -1,11 +1,8 @@
 package Main;
 
-import Classes.Produto;
+import Classes.ProdutosAvulso;
+import Classes.ProdutosFeitos;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,7 +12,7 @@ public class Teste {
 
         Scanner input = new Scanner(System.in);
 
-        ArrayList<Produto> produtosFeitos = new ArrayList<>();
+        ArrayList<ProdutosFeitos> listaDeProdutosFeitos = new ArrayList<>();
 
         int resp, resp2;
 
@@ -55,9 +52,9 @@ public class Teste {
             double precoKg = input.nextDouble();
             input.nextLine(); // consome o ENTER
 
-            Produto produto1 = new Produto(nome, peso, listaIngredientes, precoKg);
+            ProdutosFeitos produto1 = new ProdutosFeitos(nome, peso, listaIngredientes, precoKg);
 
-            produtosFeitos.add(produto1);
+            listaDeProdutosFeitos.add(produto1);
 
             System.out.println("Deseja adicionar algum produto?");
             System.out.println("[1] - SIM");
@@ -67,7 +64,7 @@ public class Teste {
         }
 
         System.out.println("\nProdutos cadastrados:");
-        for (Produto p : produtosFeitos) {
+        for (ProdutosFeitos p : listaDeProdutosFeitos) {
             System.out.println(p.getNome());
             p.informacoes();
         }
