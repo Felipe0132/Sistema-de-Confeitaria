@@ -2,7 +2,7 @@ package Classes;
 
 import java.util.List;
 
-public class Produto {
+public class ProdutosFeitos {
 
     private String nome;
     private double peso;
@@ -12,7 +12,7 @@ public class Produto {
 
     // CONSTRUTOR
 
-    public Produto(String nome, double peso, List<String> ingrendientes, double precoKg) {
+    public ProdutosFeitos(String nome, double peso, List<String> ingrendientes, double precoKg) {
         this.nome = nome;
         this.peso = peso;
         this.ingrendientes = ingrendientes;
