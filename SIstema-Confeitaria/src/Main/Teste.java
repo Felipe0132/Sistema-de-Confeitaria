@@ -36,7 +36,7 @@ public class Teste {
 
             System.out.println("Digite os ingredientes que deseja colocar:");
             do{
-                System.out.println("Digte o ingrediente:");
+                System.out.println("Digite o ingrediente:");
                 String ingrediente = input.nextLine();
 
                 listaIngredientes.add(ingrediente);
