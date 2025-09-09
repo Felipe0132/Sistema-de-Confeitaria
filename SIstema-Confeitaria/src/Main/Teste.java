@@ -15,51 +15,6 @@ public class Teste {
 
         Scanner input = new Scanner(System.in);
 
-        JFrame janela = new JFrame();
-
-        // Configuração da Janela
-        janela.setLayout(null);
-
-        int altJanela = 600;
-        int largJanela = 500;
-
-        janela.setBounds(0, 0, 600, 500);
-        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        janela.setVisible(true);
-
-        // Configuração dos elementos
-        JButton botaoCriarProdutoNovo = new JButton("Criar Produto");
-        botaoCriarProdutoNovo.setBounds(largJanela/2, 50, 150, 30);
-
-        // Adicionando elementos
-
-        janela.add(botaoCriarProdutoNovo);
-
-        // Ações dos Elementos
-
-        botaoCriarProdutoNovo.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame janelaDeCadastro = new JFrame("Adicionar Produto");
-
-                janelaDeCadastro.setBounds(0, 0, 250, 350);
-                janelaDeCadastro.setLayout(new GridLayout(2, 1));
-
-                JPanel painel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
-                JLabel nomeProduto = new JLabel("Nome:");
-                nomeProduto.setBounds(30, 30, 40, 30);
-
-                JTextField campoNomeProduto = new JTextField();
-                campoNomeProduto.setBounds(80, 30, 50, 30);
-
-                janelaDeCadastro.add(nomeProduto);
-                janelaDeCadastro.add(campoNomeProduto);
-
-                janelaDeCadastro.setVisible(true);
-            }
-        });
-
         ArrayList<Produto> produtosFeitos = new ArrayList<>();
 
         int resp, resp2;
