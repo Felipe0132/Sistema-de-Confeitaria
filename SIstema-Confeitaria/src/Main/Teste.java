@@ -18,7 +18,7 @@ public class Teste {
 
         System.out.println("Deseja adicionar algum produto?");
         System.out.println("[1] - SIM");
-        System.out.println("[2] - NAO"
+        System.out.println("[2] - NAO");
         resp = input.nextInt();
         input.nextLine(); // consome o ENTER
 
