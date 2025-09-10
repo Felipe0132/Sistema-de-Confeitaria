@@ -2,18 +2,26 @@ package Classes;
 
 public class Cliente {
 
-    private String nome;
-    private String numeroTelefone;
-    //private *TIPO* dataAniversario;
-    private String cep;
-    private String cpf;
+    protected String nome;
+    // nascimento
+    protected String cep;
+    protected String CPF;
+    protected String telefone;
+    protected boolean restricao;
 
-    public Cliente(String nome, String numeroTelefone, String cep, String cpf) {
+
+    // Construtor
+
+
+    public Cliente(String nome, String cep, String CPF, String telefone, boolean restricao) {
         this.nome = nome;
-        this.numeroTelefone = numeroTelefone;
         this.cep = cep;
-        this.cpf = cpf;
+        this.CPF = CPF;
+        this.telefone = telefone;
+        this.restricao = restricao;
     }
+
+    // Getters and Setters
 
     public String getNome() {
         return nome;
@@ -21,14 +29,6 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getCep() {
@@ -39,11 +39,27 @@ public class Cliente {
         this.cep = cep;
     }
 
-    public String getNumeroTelefone() {
-        return numeroTelefone;
+    public String getCPF() {
+        return CPF;
     }
 
-    public void setNumeroTelefone(String numeroTelefone) {
-        this.numeroTelefone = numeroTelefone;
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public boolean getRestricao() {
+        return restricao;
+    }
+
+    public void setRestricao(boolean restricao) {
+        this.restricao = restricao;
     }
 }
