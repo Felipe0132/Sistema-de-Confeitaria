@@ -7,7 +7,7 @@ public class Pedido extends Utils{
 
 
 
-    private Produtos produto; //Conferir se pode fazer mais de um produto por pedido    
+    private Produtos produto; //Conferir se pode fazer mais de um produto por pedido
     private Cliente cliente;
     private List<String> listaIngredientesFinal;
     private int quantidade;
