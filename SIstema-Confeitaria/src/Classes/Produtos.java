@@ -8,7 +8,6 @@ public class Produtos {
     protected double preco;
     protected String tipo;
     private double precoKg;
-    private double peso;
     private List<String> ingredientes;
 
     // Construtor
@@ -19,13 +18,11 @@ public class Produtos {
         this.preco = preco;
     }
 
-    public Produtos(String nome, String tipo, double precoKg, double peso, List<String> ingrendientes) {
+    public Produtos(String nome, String tipo, double precoKg, List<String> ingrendientes) {
         this.nome = nome;
         this.tipo = tipo;
         this.precoKg = precoKg;
-        this.peso = peso;
         this.ingredientes = ingrendientes;
-        this.setPreco(peso, precoKg);
     }
 
     // Especiais
@@ -68,8 +65,8 @@ public class Produtos {
         this.nome = nome;
     }
 
-    private void setPreco(double peso, double precoKg){
-        this.preco = peso * precoKg;
+    private void setPreco(double preco){
+        this.preco = preco;
     }
 
     public double getPrecoKg() {
@@ -88,11 +85,4 @@ public class Produtos {
         this.ingredientes = ingrendientes;
     }
 
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
 }

@@ -3,25 +3,26 @@ package Classes;
 
 import java.util.List;
 
-public class Pedido extends Utils{
+public class ItemPedido extends Utils{
 
 
 
-    private Produtos produto; //Conferir se pode fazer mais de um produto por pedido
+    private Produtos produto;
     private Cliente cliente;
     private List<String> listaIngredientesFinal;
     private int quantidade;
     private String codigo;
     private double precoFinal;
-    private boolean pago;
-    private boolean concluido;
+    private double peso;
     private boolean aniversariante;
     private boolean bairroContemplado;
 
 
     // Especiais
 
-    public void fazerPedido(Produtos produto, Cliente cliente, int quantidade){
+    public void adicionarItem(Produtos produto, Cliente cliente, int quantidade){
+
+
 
         if(cliente.getRestricao()){
             System.out.println("Lembre que o Cliente tem restrição!!!");
@@ -167,19 +168,11 @@ public class Pedido extends Utils{
         this.precoFinal = precoFinal;
     }
 
-    public boolean getPago() {
-        return pago;
+    public void setPeso(double peso){
+        this.peso = peso;
     }
 
-    public void setPago(boolean pago) {
-        this.pago = pago;
-    }
-
-    public boolean getConcluido() {
-        return concluido;
-    }
-
-    public void setConcluido(boolean concluido) {
-        this.concluido = concluido;
+    public double getPeso(){
+        return this.peso;
     }
 }
