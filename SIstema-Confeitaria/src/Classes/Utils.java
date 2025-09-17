@@ -12,11 +12,7 @@ public class Utils { // Classe para adicionar comandos longos utils orem não ap
         int resp = input.nextInt();
         input.nextLine();
 
-        if(resp == 1){
-            return true;
-        }else{
-            return false;
-        }
+        return resp == 1;
     }
 
     public void perguntar(){
