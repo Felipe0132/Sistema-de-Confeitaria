@@ -7,16 +7,13 @@ import java.util.List;
 
 public class Cliente {
 
-    protected int id;
+    protected long id;
     protected String nome;
     protected LocalDate data;
     protected String cep;
     protected String telefone;
     protected boolean restricao;
     protected String bairro;
-    private static List<Cliente> clientes = new ArrayList<>();
-
-
 
     public Cliente(String nome, String data, String cep, boolean restricao, String telefone) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -25,18 +22,6 @@ public class Cliente {
         this.cep = cep;
         this.restricao = restricao;
         this.telefone = telefone;
-
-        if(clientes.isEmpty()){
-            this.id = 1;
-        }else {
-            for (int i = 0; i < Cliente.getClientes().size(); i++) {
-                if (i == Cliente.getClientes().toArray().length - 1) {
-                    this.id = i + 2;
-                }
-            }
-        }
-
-        clientes.add(this);
     }
 
     private void setBairro(){
@@ -47,24 +32,16 @@ public class Cliente {
         return this.bairro;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
     public boolean isRestricao() {
         return restricao;
-    }
-
-    public static List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public static void setClientes(List<Cliente> clientes) {
-        Cliente.clientes = clientes;
     }
 
     public void setBairro(String bairro) {
