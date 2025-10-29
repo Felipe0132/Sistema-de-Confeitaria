@@ -13,7 +13,7 @@ public class Main {
 
         Cliente c1 = new Cliente("Felpo", "11/03/2006", "35501514",false, "37998700311");
         Cliente c2 = new Cliente("Chicao", "11/03/2006", "35501514",false, "37998700311");
-        Cliente c3 = new Cliente("Chicao", "11/03/2006", "35501514",false, "37998700311");
+        Cliente c3 = new Cliente("Chicaos", "11/03/2006", "35501514",false, "37998700311");
 
         Produto p1 = new Produto("Coca", List.of("Açúcar", "Drogas"), 32);
         Produto p2 = new Produto("Fanta", List.of("Açúcar", "Drogas"), 10);
