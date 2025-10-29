@@ -9,7 +9,7 @@ public class Cliente {
 
     protected long id;
     protected String nome;
-    protected LocalDate data;
+    protected LocalDate data; // Data em formato americano 
     protected String cep;
     protected String telefone;
     protected boolean restricao;
