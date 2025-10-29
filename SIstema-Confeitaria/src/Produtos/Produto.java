@@ -9,12 +9,10 @@ import java.util.Scanner;
 public class Produto {
 
     protected String nome;
-    protected int id;
+    protected Long id;
     protected double preco;
     protected List<String> ingredientes = new ArrayList<>();
     protected EnumTipo tipo;
-
-    private static List<Produto> produtos = new ArrayList<>();
 
     Scanner scanner = null;
 
@@ -23,18 +21,6 @@ public class Produto {
         this.ingredientes = ingredientes;
         this.preco = preco;
         this.setTipo();
-
-        if(produtos.isEmpty()){
-            this.id = 1;
-        }else {
-            for (int i = 0; i < Produto.getProdutos().size(); i++) {
-                if (i == getProdutos().toArray().length - 1) {
-                    this.id = i + 2;
-                }
-            }
-        }
-
-        produtos.add(this);
     }
 
     public void setTipo() {
@@ -55,13 +41,6 @@ public class Produto {
                 System.out.println("Opção inválida! Tente novamente.\n");
             }
         }
-    }
-    public void setProdutos(List<Produto> produtos) {
-        Produto.produtos = produtos;
-    }
-
-    public Produto(String nome) {
-        this.nome = nome;
     }
 
     public String getNome() {
@@ -100,16 +79,11 @@ public class Produto {
         this.ingredientes = ingredientes;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id){
         this.id = id;
     }
-
-    public static List<Produto> getProdutos() {
-        return produtos;
-    }
-
 }

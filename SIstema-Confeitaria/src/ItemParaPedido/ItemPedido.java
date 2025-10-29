@@ -18,14 +18,12 @@ public class ItemPedido {
 
     protected Produto produto;
     protected Cliente cliente;
-    protected int id;
+    protected Long id;
     protected int quantidade;
     protected double peso;
     protected double precoFinal;
     protected List<String> ingredientes;
     private Pedidos pedido;
-
-    private static final List<ItemPedido> itemPedidos = new ArrayList<>();
 
 
     public ItemPedido(Produto produto,Cliente cliente, double peso, int quantidade, Pedidos pedido) {
@@ -38,19 +36,6 @@ public class ItemPedido {
         this.removerIngrediente();
         this.adicionarIngrediente();
         this.aumentarValor();
-
-        if(itemPedidos.isEmpty()){
-            this.id = 1;
-        }else {
-            for (int i = 0; i < ItemPedido.getItemPedidos().size(); i++) {
-                if (i == getItemPedidos().toArray().length - 1) {
-                    this.id = i + 2;
-                }
-            }
-        }
-
-        itemPedidos.add(this);
-
         this.pedido = pedido;
         this.pedido.definindoMap(this);
 
@@ -65,18 +50,6 @@ public class ItemPedido {
         this.removerIngrediente();
         this.adicionarIngrediente();
         this.aumentarValor();
-
-        if(itemPedidos.isEmpty()){
-            this.id = 1;
-        }else {
-            for (int i = 0; i < ItemPedido.getItemPedidos().size(); i++) {
-                if (i == getItemPedidos().toArray().length - 1) {
-                    this.id = i + 2;
-                }
-            }
-        }
-
-        itemPedidos.add(this);
     }
 
     private void atualizarPrecoFinal(){
@@ -194,12 +167,12 @@ public class ItemPedido {
         }
     }
 
-    public static List<ItemPedido> getItemPedidos() {
-        return itemPedidos;
+    public Long getId() {
+        return id;
     }
 
-    public int getId() {
-        return id;
+    public void setId(Long id){
+        this.id = id;
     }
 
     public double getPeso() {
@@ -232,10 +205,6 @@ public class ItemPedido {
 
     public void setProduto(Produto produto) {
         this.produto = produto;
-    }
-
-    public List<String> getIngredientes() {
-        return ingredientes;
     }
 
     public void setIngredientes(List<String> ingredientes) {
