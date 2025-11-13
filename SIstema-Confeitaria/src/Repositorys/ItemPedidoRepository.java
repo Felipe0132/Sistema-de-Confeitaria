@@ -1,40 +1,41 @@
 package Repositorys;
 
-import ItemParaPedido.ItemPedido;
+import Entidade.ItemPedido;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ItemPedidoRepository {
     private List<ItemPedido> itemPedidos = new ArrayList<ItemPedido>();
-    private ItemPedidoRepository instancia;
+    private static ItemPedidoRepository instancia;
 
     private ItemPedidoRepository(){
         super();
     }
 
-    public ItemPedidoRepository getInstance(){
-        if(this.instancia == null){
-            this.instancia = new ItemPedidoRepository();
+    public static ItemPedidoRepository getInstance(){
+        if(instancia == null){
+            instancia = new ItemPedidoRepository();
         }
-        return this.instancia;
+        return instancia;
     }
 
-    public void salvar(ItemPedido itemPedido){
-        itemPedido.setId((long) (itemPedidos.size() + 1));
+    public boolean inserirItemPedido(ItemPedido itemPedido){
+        itemPedido.setId((itemPedidos.size() + 1));
         itemPedidos.add(itemPedido);
+        return true;
     }
 
-    public ItemPedido buscarPorId(Long id){
+    public ItemPedido buscarPorId(Integer id){
         for(ItemPedido item: itemPedidos){
-            if(item.getId() == id){
+            if(item.getId().equals(id)){
                 return item;
             }
         }
         throw new RuntimeException("Item nao localizado");
     }
 
-    public void excluir(Long id){
+    public void excluir(Integer id){
         itemPedidos.remove(this.buscarPorId(id));
     }
 }

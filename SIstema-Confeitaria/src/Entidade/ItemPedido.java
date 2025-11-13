@@ -1,15 +1,8 @@
-package ItemParaPedido;
+package Entidade;
 
-import Cliente.Cliente;
-import ListaDePedidos.Pedidos;
-import Produtos.EnumTipo;
-import Produtos.Produto;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class ItemPedido {
@@ -18,15 +11,14 @@ public class ItemPedido {
 
     protected Produto produto;
     protected Cliente cliente;
-    protected Long id;
-    protected int quantidade;
-    protected double peso;
-    protected double precoFinal;
+    protected Integer id;
+    protected Integer quantidade;
+    protected Double peso;
+    protected Double precoFinal;
     protected List<String> ingredientes;
-    private Pedidos pedido;
 
 
-    public ItemPedido(Produto produto,Cliente cliente, double peso, int quantidade, Pedidos pedido) {
+    public ItemPedido(Produto produto,Cliente cliente, Double peso, Integer quantidade) {
         this.produto = produto;
         this.cliente = cliente;
         this.peso = peso;
@@ -36,12 +28,10 @@ public class ItemPedido {
         this.removerIngrediente();
         this.adicionarIngrediente();
         this.aumentarValor();
-        this.pedido = pedido;
-        this.pedido.definindoMap(this);
 
     }
 
-    public ItemPedido(Produto produto,Cliente cliente, int quantidade) {
+    public ItemPedido(Produto produto,Cliente cliente, Integer quantidade) {
         this.produto = produto;
         this.cliente = cliente;
         this.quantidade = quantidade;
@@ -56,7 +46,7 @@ public class ItemPedido {
         this.precoFinal += - descontoUnidade(this.quantidade) - darDesconto() + aumentarValor();
     }
 
-    public double aumentarValor(){
+    public Double aumentarValor(){
         while (true) {
             try {
                 System.out.println("Deseja acrescentar quantos % no valor?");
@@ -73,7 +63,7 @@ public class ItemPedido {
             }
         }
     }
-    private double descontoUnidade(int unidade){
+    private double descontoUnidade(Integer unidade){
         if(produto.getTipo() == EnumTipo.PorKg) {
             if (unidade > 5) {
                 return this.precoFinal * 0.15;
@@ -167,11 +157,11 @@ public class ItemPedido {
         }
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id){
+    public void setId(Integer id){
         this.id = id;
     }
 
@@ -183,7 +173,7 @@ public class ItemPedido {
         this.peso = peso;
     }
 
-    public int getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade;
     }
 
@@ -211,7 +201,7 @@ public class ItemPedido {
         this.ingredientes = ingredientes;
     }
 
-    public double getPrecoFinal() {
+    public Double getPrecoFinal() {
         return precoFinal;
     }
 
@@ -219,3 +209,4 @@ public class ItemPedido {
         this.precoFinal = precoFinal;
     }
 }
+
