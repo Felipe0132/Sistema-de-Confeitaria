@@ -1,21 +1,21 @@
-package Cliente;
+package Entidade;
+
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Cliente {
 
-    protected long id;
+    protected Integer id;
     protected String nome;
-    protected LocalDate data; // Data em formato americano 
+    protected LocalDate data; // Data em formato americano
     protected String cep;
     protected String telefone;
-    protected boolean restricao;
+    protected Boolean restricao;
     protected String bairro;
 
-    public Cliente(String nome, String data, String cep, boolean restricao, String telefone) {
+    public Cliente(String nome, String data, String cep, Boolean restricao, String telefone) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.nome = nome;
         this.data = LocalDate.parse(data, formatter);
@@ -32,16 +32,12 @@ public class Cliente {
         return this.bairro;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public boolean isRestricao() {
-        return restricao;
     }
 
     public void setBairro(String bairro) {
@@ -80,7 +76,7 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public boolean getRestricao() {
+    public Boolean getRestricao() {
         return restricao;
     }
 

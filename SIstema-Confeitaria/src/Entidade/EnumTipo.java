@@ -1,9 +1,5 @@
-package Produtos;
+package Entidade;
 
 public enum EnumTipo {
-
     PorKg, Unitario;
-
-
-
 }

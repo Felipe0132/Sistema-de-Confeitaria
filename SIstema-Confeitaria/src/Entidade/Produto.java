@@ -1,6 +1,4 @@
-package Produtos;
-
-import Cliente.Cliente;
+package Entidade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,14 +7,12 @@ import java.util.Scanner;
 public class Produto {
 
     protected String nome;
-    protected Long id;
-    protected double preco;
+    protected Integer id;
+    protected Double preco;
     protected List<String> ingredientes = new ArrayList<>();
     protected EnumTipo tipo;
 
-    Scanner scanner = null;
-
-    public Produto(String nome, List<String> ingredientes, double preco) {
+    public Produto(String nome, List<String> ingredientes, Double preco) {
         this.nome = nome;
         this.ingredientes = ingredientes;
         this.preco = preco;
@@ -51,15 +47,15 @@ public class Produto {
         this.nome = nome;
     }
 
-    public double calcularValorFinal(double quantidade){
+    public Double calcularValorFinal(Integer quantidade){
         return this.preco * quantidade;
     }
 
-    public double getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
@@ -79,11 +75,11 @@ public class Produto {
         this.ingredientes = ingredientes;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id){
+    public void setId(Integer id){
         this.id = id;
     }
 }
